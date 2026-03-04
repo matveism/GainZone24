@@ -102,23 +102,22 @@
             color: #3b130b;
         }
 
-        /* --- HERO SECTION (added, semi-transparent to blend) --- */
+        /* --- HERO SECTION (semi‑transparent) --- */
         .hero {
-            margin-top: 20px;              /* reduced from 80px to sit nicely under user log */
+            margin-top: 20px;              
             margin-bottom: 40px;
             padding: 50px 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             gap: 40px;
-            background: rgba(255, 232, 194, 0.85);  /* semi‑transparent version of #ffe8c2 */
+            background: rgba(255, 232, 194, 0.85);  
             clip-path: polygon(0 0, 100% 0, 98% 100%, 0 100%);
             box-shadow: 0 10px 0 #a5221a, 0 20px 30px rgba(0,0,0,.25);
             border-bottom: 4px solid #fcd34d;
-            backdrop-filter: blur(2px);    /* extra soft blend */
-            border-radius: 0;               /* keep original shape */
+            backdrop-filter: blur(2px);    
+            border-radius: 0;               
         }
-        /* Override any full‑opacity background inside hero for transparency */
         .hero-left {
             max-width: 480px;
         }
@@ -205,7 +204,54 @@
         .c1 { transform: skewX(-5deg) rotate(-4deg); }
         .c2 { transform: skewX(-5deg) rotate(3deg); margin-top: 20px; }
 
-        /* keep the card grid (empty) but hero now sits above it */
+        /* --- NEW STATS SECTION (added) --- */
+        .stats-wrap {
+            margin: 60px auto;
+            padding: 20px 10px;
+            display: flex;
+            justify-content: center;
+            gap: 26px;
+            flex-wrap: wrap;
+        }
+        .stat-box {
+            width: 200px;
+            background: #fff7e0;
+            border: 3px solid #fcd34d;
+            border-radius: 26px 10px 26px 10px;
+            padding: 20px 10px;
+            text-align: center;
+            transform: skewX(-6deg);
+            box-shadow: 0 8px 0 #a5221a, 0 14px 22px rgba(0,0,0,.25);
+        }
+        .stat-box * {
+            transform: skewX(6deg);
+        }
+        .icon {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 12px;
+            border-radius: 14px 6px 14px 6px;
+            box-shadow: 0 4px 0 #a5221a, inset -2px -2px 0 rgba(0,0,0,.2);
+        }
+        .ic-gold { background: linear-gradient(135deg,#fcd34d,#fbbf24); }
+        .ic-blue { background: linear-gradient(135deg,#60a5fa,#2563eb); }
+        .ic-green { background: linear-gradient(135deg,#86efac,#22c55e); }
+        .ic-orange { background: linear-gradient(135deg,#fb923c,#ea580c); }
+        .st-num {
+            font-size: 32px;
+            font-weight: 900;
+            color: #b12f1f;
+            text-shadow: 2px 2px 0 #fcd34d;
+            margin-bottom: 6px;
+        }
+        .st-lb {
+            font-size: 15px;
+            font-weight: 700;
+            color: #7a1f15;
+            letter-spacing: .5px;
+        }
+
+        /* keep the card grid (empty) */
         .cg{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px; margin-top:20px;}
         .rc{background:linear-gradient(135deg,#30140e,#4f251d);border:3px solid #fcd34d;border-radius:30px 8px 30px 8px;padding:24px 20px;box-shadow:0 20px 25px -10px #000,inset 0 1px 3px rgba(255,215,120,.4);transition:.15s;display:flex;flex-direction:column;color:#fff;position:relative;overflow:hidden}
         .rc:hover{transform:translateY(-6px);box-shadow:0 28px 30px -8px #000,0 0 0 3px #fcd34d}
@@ -238,10 +284,13 @@
         @media(max-width:740px){
             .dnav,.ri{display:none}.ham{display:flex}.hdr{padding:0 16px}.logo span{font-size:20px}.pm{font-size:14px}.rz{padding:0 16px;margin:30px auto 40px}.ct{font-size:24px}
             .sl-wrapper { gap: 12px; }
-            /* make hero stack on mobile */
             .hero { flex-direction: column; text-align: center; padding: 40px 20px; }
             .hero-left h1 { font-size: 36px; }
             .hero-right { justify-content: center; }
+            .stats-wrap { gap: 16px; }
+            .stat-box { width: 160px; padding: 16px 6px; }
+            .st-num { font-size: 26px; }
+            .st-lb { font-size: 13px; }
         }
     </style>
 </head>
@@ -266,7 +315,7 @@
     </div>
 </div>
 
-<!-- PROMO (cleaned) -->
+<!-- PROMO -->
 <div class="promo">
     <div class="pc">
         <span class="pm">🔥 WELCOME! TO GAINZONE WE ARE OPENING SOON :D 🔥</span>
@@ -289,18 +338,17 @@
     <div class="mi">⚡ SETTINGS</div>
 </div>
 
-<!-- REWARDS SECTION – user log + (LIVE) then HERO added right after -->
+<!-- MAIN REWARDS SECTION -->
 <div class="rz">
     <div class="sl-wrapper">
         <div class="sl">(LIVE)</div>
-        <!-- user log made smaller -->
         <div class="user-log">
             <span class="user-icon">U</span>
             <span class="pts">5 <small>PTS</small></span>
         </div>
     </div>
 
-    <!-- ********** HERO SECTION (ADDED, semi-transparent) ********** -->
+    <!-- HERO SECTION (ADDED) -->
     <div class="hero">
         <div class="hero-left">
             <h1>Earn Rewards with Games & Surveys</h1>
@@ -327,7 +375,27 @@
         </div>
     </div>
 
-    <!-- original reward grid (empty, as per your request) -->
+    <!-- NEW STATS WRAP (placed right after hero) -->
+    <div class="stats-wrap">
+        <div class="stat-box">
+            <div class="icon ic-gold"></div>
+            <div class="st-num">$0.00</div>
+            <div class="st-lb">Total Earned</div>
+        </div>
+        <div class="stat-box">
+            <div class="icon ic-blue"></div>
+            <div class="st-num">0</div>
+            <div class="st-lb">Registered Users</div>
+        </div>
+        <div class="stat-box">
+            <div class="icon ic-green"></div>
+            <div class="st-num">0</div>
+            <div class="st-lb">Payouts Daily</div>
+        </div>
+        
+    </div>
+
+    <!-- original reward grid (empty, as requested) -->
     <div class="cg">
         <!-- All reward cards have been deleted per request (empty grid) -->
     </div>
