@@ -204,7 +204,7 @@
         .c1 { transform: skewX(-5deg) rotate(-4deg); }
         .c2 { transform: skewX(-5deg) rotate(3deg); margin-top: 20px; }
 
-        /* --- NEW STATS SECTION (added) --- */
+        /* --- STATS SECTION --- */
         .stats-wrap {
             margin: 60px auto;
             padding: 20px 10px;
@@ -251,6 +251,61 @@
             letter-spacing: .5px;
         }
 
+        /* --- HOW IT WORKS (freshly added, below stats) --- */
+        .how-wrap{
+            margin:80px auto;
+            text-align:center;
+        }
+        .how-title{
+            font-size:42px;
+            font-weight:900;
+            color:#b12f1f;
+            text-shadow:3px 3px 0 #fcd34d;
+            margin-bottom:40px;
+        }
+        .how-steps{
+            display:flex;
+            justify-content:center;
+            gap:30px;
+            flex-wrap:wrap;
+        }
+        .how-box{
+            width:260px;
+            background:#fff7e0;
+            border:3px solid #fcd34d;
+            border-radius:26px 10px 26px 10px;
+            padding:26px 20px;
+            transform:skewX(-6deg);
+            box-shadow:0 8px 0 #a5221a,0 14px 22px rgba(0,0,0,.25);
+        }
+        .how-box *{
+            transform:skewX(6deg);
+        }
+        .how-ic{
+            width:60px;
+            height:60px;
+            margin:0 auto 16px;
+            border-radius:16px 6px 16px 6px;
+            box-shadow:0 4px 0 #a5221a, inset -2px -2px 0 rgba(0,0,0,.2);
+        }
+        /* ICON COLORS */
+        .hi-1{background:linear-gradient(135deg,#fcd34d,#fbbf24);}   /* gold */
+        .hi-2{background:linear-gradient(135deg,#60a5fa,#2563eb);}   /* blue */
+        .hi-3{background:linear-gradient(135deg,#fb923c,#ea580c);}   /* orange */
+        .how-h{
+            font-size:22px;
+            font-weight:900;
+            color:#b12f1f;
+            text-shadow:2px 2px 0 #fcd34d;
+            margin-bottom:10px;
+        }
+        .how-p{
+            font-size:15px;
+            font-weight:700;
+            color:#7a1f15;
+            line-height:1.45;
+        }
+
         /* keep the card grid (empty) */
         .cg{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px; margin-top:20px;}
         .rc{background:linear-gradient(135deg,#30140e,#4f251d);border:3px solid #fcd34d;border-radius:30px 8px 30px 8px;padding:24px 20px;box-shadow:0 20px 25px -10px #000,inset 0 1px 3px rgba(255,215,120,.4);transition:.15s;display:flex;flex-direction:column;color:#fff;position:relative;overflow:hidden}
@@ -291,6 +346,8 @@
             .stat-box { width: 160px; padding: 16px 6px; }
             .st-num { font-size: 26px; }
             .st-lb { font-size: 13px; }
+            .how-title { font-size: 36px; }
+            .how-box { width: 220px; }
         }
     </style>
 </head>
@@ -348,7 +405,7 @@
         </div>
     </div>
 
-    <!-- HERO SECTION (ADDED) -->
+    <!-- HERO SECTION -->
     <div class="hero">
         <div class="hero-left">
             <h1>Earn Rewards with Games & Surveys</h1>
@@ -375,7 +432,7 @@
         </div>
     </div>
 
-    <!-- NEW STATS WRAP (placed right after hero) -->
+    <!-- STATS WRAP (placed right after hero) -->
     <div class="stats-wrap">
         <div class="stat-box">
             <div class="icon ic-gold"></div>
@@ -391,8 +448,29 @@
             <div class="icon ic-green"></div>
             <div class="st-num">0</div>
             <div class="st-lb">Payouts Daily</div>
+        </div>        
+    </div>
+
+    <!-- ========== HOW IT WORKS SECTION (added below stats) ========== -->
+    <div class="how-wrap">
+        <h2 class="how-title">How It Works</h2>
+        <div class="how-steps">
+            <div class="how-box">
+                <div class="how-ic hi-1"></div>
+                <div class="how-h">Choose a Task</div>
+                <div class="how-p">Pick from games, surveys, offers, and apps tailored to your interests.</div>
+            </div>
+            <div class="how-box">
+                <div class="how-ic hi-2"></div>
+                <div class="how-h">Complete & Earn</div>
+                <div class="how-p">Finish tasks and watch your balance grow instantly in real time.</div>
+            </div>
+            <div class="how-box">
+                <div class="how-ic hi-3"></div>
+                <div class="how-h">Withdraw Rewards</div>
+                <div class="how-p">Cash out via PayPal, Crypto, Virtual Visa, Bank Transfer & more.</div>
+            </div>
         </div>
-        
     </div>
 
     <!-- original reward grid (empty, as requested) -->
