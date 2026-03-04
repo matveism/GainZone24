@@ -251,7 +251,7 @@
             letter-spacing: .5px;
         }
 
-        /* --- HOW IT WORKS (freshly added, below stats) --- */
+        /* --- HOW IT WORKS --- */
         .how-wrap{
             margin:80px auto;
             text-align:center;
@@ -306,6 +306,69 @@
             line-height:1.45;
         }
 
+        /* --- WHY CHOOSE SECTION (freshly added) --- */
+        .why-wrap{
+            margin:90px auto;
+            text-align:center;
+            max-width:900px;
+        }
+        .why-title{
+            font-size:42px;
+            font-weight:900;
+            color:#b12f1f;
+            text-shadow:3px 3px 0 #fcd34d;
+            margin-bottom:10px;
+        }
+        .why-sub{
+            font-size:18px;
+            font-weight:700;
+            color:#7a1f15;
+            margin-bottom:40px;
+        }
+        .why-grid{
+            display:flex;
+            flex-wrap:wrap;
+            justify-content:center;
+            gap:26px;
+        }
+        .why-box{
+            width:260px;
+            background:#fff7e0;
+            border:3px solid #fcd34d;
+            border-radius:26px 10px 26px 10px;
+            padding:26px 20px;
+            transform:skewX(-6deg);
+            box-shadow:0 8px 0 #a5221a,0 14px 22px rgba(0,0,0,.25);
+        }
+        .why-box *{
+            transform:skewX(6deg);
+        }
+        .why-ic{
+            width:60px;
+            height:60px;
+            margin:0 auto 16px;
+            border-radius:16px 6px 16px 6px;
+            box-shadow:0 4px 0 #a5221a, inset -2px -2px 0 rgba(0,0,0,.2);
+        }
+        /* ICON COLORS */
+        .wi-1{background:linear-gradient(135deg,#fcd34d,#fbbf24);}   /* gold */
+        .wi-2{background:linear-gradient(135deg,#60a5fa,#2563eb);}   /* blue */
+        .wi-3{background:linear-gradient(135deg,#86efac,#22c55e);}   /* green */
+        .wi-4{background:linear-gradient(135deg,#fb923c,#ea580c);}   /* orange */
+        .why-h{
+            font-size:22px;
+            font-weight:900;
+            color:#b12f1f;
+            text-shadow:2px 2px 0 #fcd34d;
+            margin-bottom:10px;
+        }
+        .why-p{
+            font-size:15px;
+            font-weight:700;
+            color:#7a1f15;
+            line-height:1.45;
+        }
+
         /* keep the card grid (empty) */
         .cg{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px; margin-top:20px;}
         .rc{background:linear-gradient(135deg,#30140e,#4f251d);border:3px solid #fcd34d;border-radius:30px 8px 30px 8px;padding:24px 20px;box-shadow:0 20px 25px -10px #000,inset 0 1px 3px rgba(255,215,120,.4);transition:.15s;display:flex;flex-direction:column;color:#fff;position:relative;overflow:hidden}
@@ -348,6 +411,8 @@
             .st-lb { font-size: 13px; }
             .how-title { font-size: 36px; }
             .how-box { width: 220px; }
+            .why-title { font-size: 36px; }
+            .why-box { width: 220px; }
         }
     </style>
 </head>
@@ -451,7 +516,7 @@
         </div>        
     </div>
 
-    <!-- ========== HOW IT WORKS SECTION (added below stats) ========== -->
+    <!-- ========== HOW IT WORKS SECTION ========== -->
     <div class="how-wrap">
         <h2 class="how-title">How It Works</h2>
         <div class="how-steps">
@@ -469,6 +534,34 @@
                 <div class="how-ic hi-3"></div>
                 <div class="how-h">Withdraw Rewards</div>
                 <div class="how-p">Cash out via PayPal, Crypto, Virtual Visa, Bank Transfer & more.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== WHY CHOOSE SECTION (added below How It Works) ========== -->
+    <div class="why-wrap">
+        <h2 class="why-title">Why Choose gzone24.netlify.app?</h2>
+        <p class="why-sub">Trusted by our community, we make earning online rewards simple and reliable.</p>
+        <div class="why-grid">
+            <div class="why-box">
+                <div class="why-ic wi-1"></div>
+                <div class="why-h">Instant Rewards</div>
+                <div class="why-p">Receive coins instantly with no extra waiting times.</div>
+            </div>
+            <div class="why-box">
+                <div class="why-ic wi-2"></div>
+                <div class="why-h">100% Secure</div>
+                <div class="why-p">Your data is protected and encrypted at all times.</div>
+            </div>
+            <div class="why-box">
+                <div class="why-ic wi-3"></div>
+                <div class="why-h">High Payouts</div>
+                <div class="why-p">Industry‑leading rewards and exclusive bonuses.</div>
+            </div>
+            <div class="why-box">
+                <div class="why-ic wi-4"></div>
+                <div class="why-h">Extra Bonuses</div>
+                <div class="why-p">Earn bonus coins with daily giveaways and events.</div>
             </div>
         </div>
     </div>
