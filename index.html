@@ -30,7 +30,6 @@
         .promo{position:fixed;top:58px;left:0;width:100%;height:44px;background:rgba(30,10,7,.95);border-bottom:2px solid #fcd34d;border-top:1px solid #e05a3a;display:flex;align-items:center;justify-content:center;z-index:105;box-shadow:0 4px 10px rgba(0,0,0,.6);font-weight:700;font-size:20px;letter-spacing:1.5px;text-transform:uppercase;text-shadow:0 2px 5px #b13e2c;backdrop-filter:blur(8px);overflow:hidden;padding:0 24px}
         .pc{display:flex;align-items:center;gap:20px;background:rgba(252,211,77,.08);padding:6px 24px;border-radius:100px;border-left:3px solid #fcd34d;border-right:3px solid #fcd34d;box-shadow:inset 0 0 0 1px rgba(252,211,77,.3)}
         .pm{font-weight:800;font-size:20px;display:flex;align-items:center;gap:10px}
-        /* .ph removed — not used anymore */
 
         /* REWARDS */
         .rz{max-width:1400px;margin:40px auto 60px;padding:0 24px}
@@ -58,52 +57,156 @@
             text-transform: uppercase;
             white-space: nowrap;
         }
-        /* --- smaller user-log (fits better next to LIVE) --- */
+        /* smaller user-log (fits better next to LIVE) */
         .user-log {
             display: flex;
             align-items: center;
             background: linear-gradient(145deg, #f1c40f, #e67e22);
-            border-radius: 40px 8px 40px 8px;   /* slightly smaller radius */
-            padding: 4px 16px 4px 8px;          /* reduced padding */
+            border-radius: 40px 8px 40px 8px;
+            padding: 4px 16px 4px 8px;
             border: 2px solid #fff;
             box-shadow: 0 4px 0 #a13020, 0 6px 10px rgba(0,0,0,.4);
             transform: skewX(-3deg);
-            gap: 6px;                            /* smaller gap */
+            gap: 6px;
             white-space: nowrap;
         }
         .user-log .user-icon {
-            width: 30px;                          /* was 40px */
-            height: 30px;                         /* was 40px */
+            width: 30px;
+            height: 30px;
             background: #fff;
             border-radius: 50% 20% 50% 20%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 18px;                       /* was 24px */
+            font-size: 18px;
             font-weight: 900;
             color: #b13e2c;
-            border: 2px solid #fcd34d;              /* slightly thinner border */
+            border: 2px solid #fcd34d;
             transform: rotate(2deg) skewX(3deg);
-            box-shadow: 0 3px 0 #7b341e;            /* smaller shadow */
+            box-shadow: 0 3px 0 #7b341e;
         }
         .user-log .pts {
             font-weight: 800;
-            font-size: 18px;                         /* was 24px */
+            font-size: 18px;
             letter-spacing: 0.8px;
             color: #2d0a03;
-            text-shadow: 1.5px 1.5px 0 #fcd34d;      /* lighter text-shadow */
+            text-shadow: 1.5px 1.5px 0 #fcd34d;
             background: rgba(255,255,240,0.3);
-            padding: 3px 12px 3px 8px;               /* reduced padding */
+            padding: 3px 12px 3px 8px;
             border-radius: 30px 4px 30px 4px;
         }
         .user-log .pts small {
-            font-size: 13px;                          /* was 16px */
+            font-size: 13px;
             font-weight: 600;
             margin-left: 3px;
             color: #3b130b;
         }
-        /* keep everything else 100% untouched */
-        .cg{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px}
+
+        /* --- HERO SECTION (added, semi-transparent to blend) --- */
+        .hero {
+            margin-top: 20px;              /* reduced from 80px to sit nicely under user log */
+            margin-bottom: 40px;
+            padding: 50px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+            background: rgba(255, 232, 194, 0.85);  /* semi‑transparent version of #ffe8c2 */
+            clip-path: polygon(0 0, 100% 0, 98% 100%, 0 100%);
+            box-shadow: 0 10px 0 #a5221a, 0 20px 30px rgba(0,0,0,.25);
+            border-bottom: 4px solid #fcd34d;
+            backdrop-filter: blur(2px);    /* extra soft blend */
+            border-radius: 0;               /* keep original shape */
+        }
+        /* Override any full‑opacity background inside hero for transparency */
+        .hero-left {
+            max-width: 480px;
+        }
+        .hero-left h1 {
+            font-size: 42px;
+            font-weight: 900;
+            color: #b12f1f;
+            text-shadow: 3px 3px 0 #fcd34d;
+            margin-bottom: 16px;
+        }
+        .hero-left p {
+            font-size: 18px;
+            font-weight: 600;
+            color: #7a1f15;
+            line-height: 1.5;
+            margin-bottom: 30px;
+        }
+        .cta-btn {
+            background: #fff;
+            border: 3px solid #fcd34d;
+            padding: 14px 34px;
+            font-size: 20px;
+            font-weight: 800;
+            color: #b12f1f;
+            border-radius: 40px 12px 40px 12px;
+            cursor: pointer;
+            transform: skewX(-6deg);
+            box-shadow: 0 6px 0 #a5221a, 0 10px 18px rgba(0,0,0,.3);
+            transition: .15s;
+        }
+        .cta-btn span {
+            display: inline-block;
+            transform: skewX(6deg);
+        }
+        .cta-btn:hover {
+            background: #fff7c2;
+            transform: skewX(-6deg) translateY(4px);
+            box-shadow: 0 2px 0 #a5221a;
+        }
+        .hero-right {
+            display: flex;
+            gap: 20px;
+            position: relative;
+        }
+        .rw-card {
+            width: 220px;
+            height: 140px;
+            background: #fff;
+            border-radius: 20px 8px 20px 8px;
+            border: 3px solid #fcd34d;
+            box-shadow: 0 8px 0 #a5221a, 0 12px 20px rgba(0,0,0,.25);
+            padding: 14px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transform: skewX(-5deg);
+        }
+        .rw-card .rw-top {
+            height: 40px;
+            background: linear-gradient(120deg,#ff4f2a,#c6311e 70%);
+            border-radius: 14px 6px 14px 6px;
+            box-shadow: inset -2px -2px 0 #b45309;
+        }
+        .rw-info {
+            transform: skewX(5deg);
+        }
+        .rw-info .nm {
+            font-size: 18px;
+            font-weight: 800;
+            color: #b12f1f;
+        }
+        .rw-info .lb {
+            font-size: 12px;
+            font-weight: 700;
+            color: #7a1f15;
+        }
+        .rw-visa {
+            font-size: 22px;
+            font-weight: 900;
+            color: #c6311e;
+            text-align: right;
+            transform: skewX(5deg);
+        }
+        .c1 { transform: skewX(-5deg) rotate(-4deg); }
+        .c2 { transform: skewX(-5deg) rotate(3deg); margin-top: 20px; }
+
+        /* keep the card grid (empty) but hero now sits above it */
+        .cg{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px; margin-top:20px;}
         .rc{background:linear-gradient(135deg,#30140e,#4f251d);border:3px solid #fcd34d;border-radius:30px 8px 30px 8px;padding:24px 20px;box-shadow:0 20px 25px -10px #000,inset 0 1px 3px rgba(255,215,120,.4);transition:.15s;display:flex;flex-direction:column;color:#fff;position:relative;overflow:hidden}
         .rc:hover{transform:translateY(-6px);box-shadow:0 28px 30px -8px #000,0 0 0 3px #fcd34d}
         .rc::before{content:"";position:absolute;top:0;right:0;width:120px;height:120px;background:linear-gradient(45deg,transparent 50%,rgba(252,211,77,.1) 50%);pointer-events:none}
@@ -135,6 +238,10 @@
         @media(max-width:740px){
             .dnav,.ri{display:none}.ham{display:flex}.hdr{padding:0 16px}.logo span{font-size:20px}.pm{font-size:14px}.rz{padding:0 16px;margin:30px auto 40px}.ct{font-size:24px}
             .sl-wrapper { gap: 12px; }
+            /* make hero stack on mobile */
+            .hero { flex-direction: column; text-align: center; padding: 40px 20px; }
+            .hero-left h1 { font-size: 36px; }
+            .hero-right { justify-content: center; }
         }
     </style>
 </head>
@@ -159,11 +266,10 @@
     </div>
 </div>
 
-<!-- PROMO (cleaned: #FULL POWER removed) -->
+<!-- PROMO (cleaned) -->
 <div class="promo">
     <div class="pc">
         <span class="pm">🔥 WELCOME! TO GAINZONE WE ARE OPENING SOON :D 🔥</span>
-        <!-- .ph span removed as requested -->
     </div>
 </div>
 
@@ -183,16 +289,45 @@
     <div class="mi">⚡ SETTINGS</div>
 </div>
 
-<!-- REWARDS SECTION – smaller user log right next to (LIVE) -->
+<!-- REWARDS SECTION – user log + (LIVE) then HERO added right after -->
 <div class="rz">
     <div class="sl-wrapper">
         <div class="sl">(LIVE)</div>
-        <!-- user log made smaller (compact, proportional) -->
+        <!-- user log made smaller -->
         <div class="user-log">
             <span class="user-icon">U</span>
             <span class="pts">5 <small>PTS</small></span>
         </div>
     </div>
+
+    <!-- ********** HERO SECTION (ADDED, semi-transparent) ********** -->
+    <div class="hero">
+        <div class="hero-left">
+            <h1>Earn Rewards with Games & Surveys</h1>
+            <p>Get paid in PayPal Funds, Crypto, Virtual Visa Cards, Bank Transfer & more — start earning in minutes.</p>
+            <button class="cta-btn"><span>Start Earning</span></button>
+        </div>
+        <div class="hero-right">
+            <div class="rw-card c1">
+                <div class="rw-top"></div>
+                <div class="rw-info">
+                    <span class="nm">Mike M.</span>
+                    <span class="lb">Digital Rewards Card</span>
+                </div>
+                <div class="rw-visa">AMAZON GC</div>
+            </div>
+            <div class="rw-card c2">
+                <div class="rw-top"></div>
+                <div class="rw-info">
+                    <span class="nm">Oleg R.</span>
+                    <span class="lb">Digital Rewards Card</span>
+                </div>
+                <div class="rw-visa">AMAZON GC</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- original reward grid (empty, as per your request) -->
     <div class="cg">
         <!-- All reward cards have been deleted per request (empty grid) -->
     </div>
